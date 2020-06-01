@@ -1,0 +1,20 @@
+1.Spring框架概述
+2.IOC容器 控制反转
+	IOC底层原理
+	    XML解析 工厂模式 反射
+	IOC接口（BeanFactory）
+	IOC操作bean管理（基于xml）
+	IOC操作bean管理（基于注解）
+
+
+1.IOC思想基于IOC容器完成，IOC容器底层就是对象工厂
+2.Spring提供了IOC容器的实现方式： 两个接口
+    1.BeanFactory：IOC容器基本实现，是Spring内部的使用接口，不提供开发人员进行使用
+    *加载配置文件的时候不会创建bean，只会加载配置文件 在获取对象或者使用的时候才会创建对象
+    2.ApplicationContext:Beanfactory接口的子接口，提供更多更强大的功能，一般有开发人员进行使用
+    *加载配置文件的时候就会进行bean的创建，如果配置文件中bean创建失败则无法启动
+    因为spring主要是和其他的框架进行整合，讲这些最耗时的操作留在项目启动的时候
+3.ApplicationContext接口的实现类
+    FileSystemXmlApplicationContext 对应的是盘符下的路径
+    ClassPathXmlApplicationContext 对应的是项目的src下的路径
+
