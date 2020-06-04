@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--配置User对象创建-->
     <bean id="user" class="com.atgugui.spring.demo.User"/>
+
+    <bean id="book" class="com.atgugui.spring.demo.Book">
+        <property name="name" value="三国演义"></property>
+        <property name="author" value="罗贯中"></property>
+        <!-- 注入null 其实不写默认也是null -->
+       <!-- <property name="desc" >
+            <null/>
+        </property>-->
+
+        <!-- 特殊符号使用 转义的方法-->
+        <property name="desc">
+            <value><![CDATA[<<<<难难难]]>
+            </value>
+        </property>
+
+    </bean>
+    <!--通过p的标签注入-->
+    <!--  <bean id="book" class="com.atgugui.spring.demo.Book" p:name="11" p:author="zz"/>-->
+
+    <bean id ="orders" class="com.atgugui.spring.demo.Orders" >
+        <constructor-arg name="name" value="电脑"></constructor-arg>
+        <constructor-arg name="address" value="上海"></constructor-arg>
+    </bean>
 </beans>

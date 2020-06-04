@@ -18,3 +18,6 @@
     FileSystemXmlApplicationContext 对应的是盘符下的路径
     ClassPathXmlApplicationContext 对应的是项目的src下的路径
 
+DI（依赖注入）的两种注入方法：
+    set注入,先创建对象然后才会注入属性,其实还是五参的构造函数 property；
+    有参构造注入；
